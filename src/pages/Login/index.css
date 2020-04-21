@@ -1,0 +1,22 @@
+.root{
+  background-color: #324057;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.login_pop{
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -130px 0 0 -180px;
+}
+h3{
+  text-align: center;
+}

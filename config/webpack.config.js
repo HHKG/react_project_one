@@ -348,10 +348,57 @@ module.exports = function(webpackEnv) {
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
           oneOf: [
-            {
+            // {//使用css modules
+            //   test: /\.css$/,
+            //   loader: "style-loader!css-loader?modules"
+            // },
+            // {//antd样式处理
+            //   test:/\.css$/,
+            //   exclude:/src/,
+            //   use:[
+            //       { loader: "style-loader",},
+            //       {
+            //           loader: "css-loader",
+            //           options:{
+            //               importLoaders:1
+            //           }
+            //       }
+            //   ]
+            // },
+            {//ES6、JSX处理
+              test:/(\.jsx|\.js)$/,
+              exclude: /node_modules/,
+              loader:'babel-loader',
+              query:
+                  {
+                      plugins: [
+                          [
+                              "import",
+                              {libraryName: "antd", style: 'css'}
+                          ] //antd按需加载
+                      ]
+                  },
+          },
+
+          {//CSS处理
               test: /\.css$/,
-              loader: "style-loader!css-loader?modules"
-            },
+              loader: "style-loader!css-loader?modules",
+              exclude: /node_modules/,
+          },
+
+          {//antd样式处理
+            test:/\.css$/,
+            exclude:/src/,
+            use:[
+                { loader: "style-loader",},
+                {
+                    loader: "css-loader",
+                    options:{
+                        importLoaders:1
+                    }
+                }
+            ]
+          },
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
@@ -375,7 +422,7 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
-                  ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }], // `style: true` 会加载 less 文件
+                  // ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }], // `style: true` 会加载 less 文件
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {

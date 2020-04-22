@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from '../src/pages/Login';
+import Pages from './pages';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Login></Login>
-  </React.StrictMode>,
+  <React.Fragment>
+    <Pages></Pages>
+  </React.Fragment>,
   document.getElementById('root')
 );
 

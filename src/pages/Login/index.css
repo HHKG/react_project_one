@@ -10,12 +10,14 @@
   padding: 30px;
   background-color: #fff;
   border-radius: 12px;
-  width: 300px;
-  height: 200px;
   position: absolute;
+  width: 400px;
   top: 50%;
   left: 50%;
-  margin: -130px 0 0 -180px;
+  margin: -130px 0 0 -230px;
+}
+.input_text{
+  margin:10px 0 20px 0;
 }
 h3{
   text-align: center;

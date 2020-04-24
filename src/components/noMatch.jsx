@@ -7,7 +7,9 @@ class NoMatch extends React.PureComponent {
       // this.props.history.push('/');
   }
   render() {
-      return null;
+      return (
+        <h1>页面不存在！</h1>
+      );
   }
 }
 

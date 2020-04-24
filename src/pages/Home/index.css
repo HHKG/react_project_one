@@ -6,3 +6,36 @@
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
 }
+.content{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px;
+}
+/* 白色字体 */
+:global(.font_c_w){
+  color: #fff;
+}
+/* 左右边距为15 */
+:global(.m-l-r-15){
+  margin:0 15px;
+}
+/* 颜色值为#999的字体 */
+:global(.font_c_999){
+  color: #999;
+}
+/* 分割线 */
+:global(.split_line_vertical){
+  position: relative;
+}
+:global(.split_line_vertical::after){
+  position: absolute;
+  content: "";
+  top:4px;
+  right: -7.5px;
+  height:12px;
+  width: 1px;
+  border-right: 1px solid #999;
+}
+.header_bg{
+  background: #001529;
+}

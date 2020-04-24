@@ -12,10 +12,10 @@ export default ()=>(
   <Router>
       <Suspense fallback={<Spin></Spin>}>
           <Switch>
-            <Route exact path="/" render={()=><Redirect to="/Login" push></Redirect>}></Route>
+            <Route exact path="/" render={()=><Redirect to="/Login"></Redirect>}></Route>
             <Route path="/Home" component={Home}></Route>
             <Route path="/Login" component={Login}></Route>
-            <Route component={NoMatch}></Route>
+            <Route component={Login}></Route>
           </Switch>
       </Suspense>
   </Router>

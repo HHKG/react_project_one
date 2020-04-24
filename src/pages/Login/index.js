@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import indexStyle from './index.css';
 import { Form, Input, Button, Checkbox } from 'antd';
-import globalTips from '../../components/globalTips'
+import globalTips from '../../components/globalTips';
+import queryString from 'query-string';
 
 class Login extends Component{
   constructor(props){
@@ -23,7 +24,7 @@ class Login extends Component{
         this.props.success();
         setTimeout(()=>{
           this.props.history.push({
-            pathname:'/Home'
+            pathname:'/Home',search:queryString.stringify({'phone':values.username})
           })
         },1300)
       }

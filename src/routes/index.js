@@ -1,6 +1,5 @@
 import React, { Suspense,lazy } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import {RouteWithSubRoutes} from './handleSubRoute';
 import {Spin} from 'antd';
 
 const NoMatch = lazy(()=>import('../components/noMatch'));
@@ -16,12 +15,13 @@ const SystemManagement = lazy(()=>import('../pages/SystemManagement'));
 const TestData = lazy(()=>import('../pages/TestData'));
 const AccountManagement = lazy(()=>import('../pages/AccountManagement'));
 const ShopManagement = lazy(()=>import('../pages/ShopManagement'));
+
 export default class MRouter extends React.Component{
-    
     render(){
         return (
           <Suspense fallback={<Spin/>}>
             <Switch>
+              <Route exact path="/Home" render={()=><Redirect to="/Home/HomePage"></Redirect>}></Route>
               <Route path="/Home/HomePage" component={HomePage}></Route>
               <Route path="/Home/UserManagement" component={UserManagement}></Route>
               <Route path="/Home/ContentSetting" component={ContentSetting}></Route>

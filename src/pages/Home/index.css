@@ -11,6 +11,33 @@
   justify-content: space-between;
   margin: 0 15px;
 }
+:global(.block_container){
+  margin: 15px;
+}
+:global(.m_b_10){
+  padding-bottom: 10px;
+}
+:global(.d_flex){
+  display:flex;
+}
+:global(.m_l_r_20){
+  margin: 0 20px;
+}
+:global(.f_r){
+  float: right;
+}
+:global(.p_l_r_16){
+  padding: 0 16px;
+}
+:global(.p_15){
+  padding: 0 15px 8px;
+}
+:global(.font_size_20){
+  font-size: 20px;
+}
+:global(.j_c_btw){
+  justify-content: space-between;
+}
 /* 白色字体 */
 :global(.font_c_w){
   color: #fff;
@@ -22,6 +49,16 @@
 /* 颜色值为#999的字体 */
 :global(.font_c_999){
   color: #999;
+}
+:global(.home_p_24){
+  padding:24px;
+  background-color: #FFF;
+}
+:global(.bg_fff){
+  background-color: #fff;
+}
+:global(.m_t_15){
+  margin-top:15px
 }
 /* 分割线 */
 :global(.split_line_vertical){

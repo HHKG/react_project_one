@@ -43,9 +43,9 @@ class Home extends Component {
   }
   componentDidMount = () => {
     console.log(this.props);
-    let opts=this.props.location.search?queryString.parse(this.props.location.search):{};
-    let userName=opts.phone;
-    localStorage.setItem('userName',userName);
+    let opts = this.props.location.search ? queryString.parse(this.props.location.search) : {};
+    let userName = opts.phone;
+    localStorage.setItem('userName', userName);
     // let userName = this.props.location.query.name
     // 路由切换，对应的内容和高亮菜单也随着变化而变化
     this.handleRouteContact();
@@ -73,8 +73,8 @@ class Home extends Component {
     let breadcrumb = ['首页'];
     // 把对应索引中数组元素的title放在面包屑数组中
     breadcrumb.push(menuItem[currentIndex].title);
-  //  获取存储好的用户名
-  let userName=localStorage.getItem('userName');
+    //  获取存储好的用户名
+    let userName = localStorage.getItem('userName');
     this.setState({
       defaultUrl: currentUrl,
       currentIndex,
@@ -118,16 +118,20 @@ class Home extends Component {
               </div>
             </div>
           </Header>
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
+          <div className={homeStyle.site_layout_background}>
+            <Breadcrumb style={{ margin: '16px' }}>
               {breadCrumbView}
             </Breadcrumb>
-            <div className={homeStyle.site_layout_background} style={{ padding: 24, minHeight: 360 }}>
-              {/* 路由展示的内容 */}
-              <MRouter defaultUrl={defaultUrl}></MRouter>
+          </div>
+          <Content>
+            <div style={{ minHeight: 360 }}>
+              <div>
+                {/* 路由展示的内容 */}
+                <MRouter defaultUrl={defaultUrl}></MRouter>
+              </div>
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>KG_verson_0.1 ©2020 Created by 黄华康</Footer>
         </Layout>
       </Layout>
     );

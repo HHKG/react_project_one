@@ -84,6 +84,8 @@
     "antd": "^4.1.4",
     "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.4.2",
+    "echarts": "^4.7.0",
+    "moment": "^2.24.0",
     "react-router-dom": "^5.1.2"
   },
   "jest": {

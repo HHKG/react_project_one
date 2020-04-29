@@ -1,0 +1,58 @@
+/* 已经配置了css module */
+:global(.clear_f){
+   position: relative;
+}
+:global(.clear_f::after){
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+:global(p){
+  margin: 0;
+}
+.f_left{
+  float: left;
+}
+:global(.flex){
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+:global(.p_l_20){
+  padding-left: 20px;
+}
+:global(.m_l_10){
+  padding-left: 10px;
+}
+:global(.border_e0e0e0){
+  border:1px solid #e0e0e0;
+}
+:global(.d_inline_block){
+  display: inline-block;
+}
+:global(.p_outside){
+  padding:20px;
+}
+
+:global(.m_l_30:not(:first-child)){
+  margin-left: 30px;
+}
+:global(.m_t_30){
+  margin-top:30px;
+}
+.icon{
+  width: 48px;
+  height: 48px;
+}
+:global(.b_g_f0f2f5){
+  background-color:#f0f2f5;
+}
+:global(.m_b_15){
+  margin-bottom: 15px;
+}
+.sale_chart{
+  width: 100%;
+  height: 300px;
+}

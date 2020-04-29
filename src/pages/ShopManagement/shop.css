@@ -1,0 +1,22 @@
+.p_l_r{
+  padding:10px
+}
+.p_l_r:hover{
+  cursor: pointer;
+}
+.select_item{
+  position: relative;
+  color: #1890ff;
+}
+.select_item::after{
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  content: "";
+  border-bottom: 2px solid #1890ff;
+}
+.shopName{
+  width: 200px;
+}

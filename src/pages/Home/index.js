@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb } from 'antd';
+import emitter from '../../util/event';
 import { BankOutlined, RobotOutlined, ToolOutlined, ShopOutlined, FundProjectionScreenOutlined, MacCommandOutlined, UserOutlined, ProjectOutlined, BulbOutlined, SecurityScanOutlined, TeamOutlined, SettingOutlined } from '@ant-design/icons';
 import homeStyle from './index.css';
 import MRouter from '../../routes';
@@ -34,7 +35,8 @@ class Home extends Component {
     let breadcrumb = ['首页'];
     breadcrumb.push(menuItem[index].title);
     this.props.history.push({
-      pathname: menuItem[index].url
+      pathname: menuItem[index].url,
+      search:queryString.stringify({'getChildrenBreadcrumb':this.getChildrenBreadcrumb})
     })
     this.setState({
       breadcrumb,
@@ -42,7 +44,6 @@ class Home extends Component {
     })
   }
   componentDidMount = () => {
-    console.log(this.props);
     let opts = this.props.location.search ? queryString.parse(this.props.location.search) : {};
     let userName = opts.phone;
     localStorage.setItem('userName', userName);
@@ -52,6 +53,9 @@ class Home extends Component {
     this.setState({
       userName
     })
+  }
+  componentWillUnmount = () => {
+    emitter.removeListener(this.eventEmitter);
   }
 
   componentWillReceiveProps = () => {
@@ -80,6 +84,17 @@ class Home extends Component {
       currentIndex,
       breadcrumb,
       userName
+    })
+  }
+  //获取子页面的面包屑
+  getChildrenBreadcrumb = () => {
+    // 实现无嵌套关系的组件通讯，定义一个自定义事件
+    this.eventEmitter = emitter.addListener('getChildrenPageTxt', (txt) => {
+      let { breadcrumb } = this.state;
+      breadcrumb.push(txt);
+      this.setState({
+        breadcrumb
+      })
     })
   }
 
@@ -127,7 +142,7 @@ class Home extends Component {
             <div style={{ minHeight: 360 }}>
               <div>
                 {/* 路由展示的内容 */}
-                <MRouter defaultUrl={defaultUrl}></MRouter>
+                <MRouter  defaultUrl={defaultUrl}></MRouter>
               </div>
             </div>
           </Content>

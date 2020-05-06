@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Tabs, Input, Select, DatePicker, Button,Table  } from 'antd';
 import TitleComp from '../../components/titleComp';
-import styles from './testData.css';
-import YuanFan from '../UserManagement/yuanFang';
-const { TabPane } = Tabs;
+import styles from './user.css';
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 
@@ -83,7 +81,7 @@ const data = [
     name: 'Joe Black',
   },
 ];
-class TestData extends Component {
+class YuanFan extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -97,9 +95,8 @@ class TestData extends Component {
   render() {
     return (
       <React.Fragment>
-        <TitleComp title="用户管理" btnTxt="导出Excel" handleFn=""></TitleComp>
-        <Tabs defaultActiveKey="1" onChange={this.callback} style={{ background: '#fff', padding: '0 15px 15px' }}>
-          <TabPane tab="直营店" key="1">
+        <div style={{ background: '#fff', padding: '0 15px 15px' }}>
+          <div>
             <label className={`m_t_15 ${styles.display_i_b}`}>
               用户名称/手机号：
              <Input type="text" placeholder="请输入用户名称或手机号" style={{ width: "200px" }} />
@@ -147,13 +144,10 @@ class TestData extends Component {
               <Button>重置</Button>
             </label>
             <Table className="m_t_15" columns={columns} dataSource={data} size="middle" />
-          </TabPane>
-          <TabPane tab="院方" key="2">
-            <YuanFan></YuanFan>
-          </TabPane>
-        </Tabs>
+          </div>
+        </div>
       </React.Fragment>
     )
   }
 }
-export default TestData;
+export default YuanFan;

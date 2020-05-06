@@ -25,6 +25,13 @@ const GlobalTip=(ChildrenComponent)=>{
         message.success({ content: '登录成功！', key, duration: 2 });
       }, 1000);
     }
+    submit=()=>{
+      const key = 'submit';
+      message.loading({ content: '正在提交...', key });
+      setTimeout(() => {
+        message.success({ content: '登录成功！', key, duration: 2 });
+      }, 1000);
+    }
     render(){
       return(
         <ChildrenComponent openNotification={this.openNotification} success={this.success}></ChildrenComponent>

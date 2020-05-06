@@ -17,14 +17,3 @@
   content: "";
   border-bottom: 2px solid #1890ff;
 }
-.shopName{
-  width: 200px;
-}
-.ant_divider{
-  margin: 10px;
-}
-.modal{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

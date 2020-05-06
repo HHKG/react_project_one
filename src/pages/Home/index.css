@@ -23,6 +23,9 @@
 :global(.m_l_r_20){
   margin: 0 20px;
 }
+:global(.m_l_20){
+  margin: 0 0 0 20px;
+}
 :global(.f_r){
   float: right;
 }

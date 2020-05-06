@@ -8,12 +8,15 @@ class TitleComp extends Component{
 
     };
   }
+  handleButton=()=>{
+    this.props.handleFn();
+  }
   render(){
     return(
       <div className="bg_fff m_b_10 d_flex j_c_btw p_l_r_16">
         <h1 className="font_size_20">{this.props.title}</h1>
         {
-          this.props.btnTxt?<Button type="primary">{this.props.btnTxt}</Button>:null
+          this.props.btnTxt?<Button type="primary" onClick={this.handleButton}>{this.props.btnTxt}</Button>:null
         }
       </div>
     )

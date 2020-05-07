@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import TabChange from '../../components/tabChange';
 import TitleComp from '../../components/titleComp';
-import { Input, Button, Table, Modal } from 'antd';
+import { Input, Button, Table,Select, Modal } from 'antd';
 import styles from '../ShopManagement/shop.css';
 import {withRouter} from 'react-router-dom';
+const {Option}=Select;
 class Product extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +23,12 @@ class Product extends Component {
   gotoAddProduct=()=>{
     console.log(this.props);
     this.props.history.push({ pathname: '/Home/Product/AddProduct' });
+  }
+  handleShopName=(e)=>{
+    console.log(e.target.value);
+  }
+  selectProductCategory=(value)=>{
+    console.log(value);
   }
 
   render() {
@@ -88,9 +95,9 @@ class Product extends Component {
         <span>
           <a onClick={this.gotoAddProduct}>编辑</a>
           <span className={styles.ant_divider}></span>
-          <a>删除</a>
+          <a>下架</a>
           <span className={styles.ant_divider}></span>
-          <a>生成二维码</a>
+          <a>删除</a>
           <span className={styles.ant_divider}></span>
         </span>
       ),
@@ -167,9 +174,9 @@ class Product extends Component {
         <span>
           <a onClick={this.gotoAddProduct}>编辑</a>
           <span className={styles.ant_divider}></span>
-          <a>删除</a>
+          <a>下架</a>
           <span className={styles.ant_divider}></span>
-          <a onClick={this.showModal}>生成二维码</a>
+          <a onClick={this.showModal}>删除</a>
           <span className={styles.ant_divider}></span>
         </span>
       ),
@@ -193,6 +200,19 @@ class Product extends Component {
                   onChange={this.handleShopName}
                   maxLength={30}
                 />
+              </label>
+              <label className="m_l_20">产品类型：
+                <Select onChange={this.selectProductCategory} placeholder="请选择产品类型" style={{ width: 200 }}>
+                  <Option value="">请选择</Option>
+                  <Option value="眼霜">眼霜</Option>
+                  <Option value="喷雾">喷雾</Option>
+                </Select>
+                {/* <Input type='text'
+                  className={styles.shopName}
+                  placeholder='请输选择产品类型'
+                  value={this.state.shopName}
+                  
+                /> */}
               </label>
               <div className="f_r">
                 <Button className="m_l_r_20" type="primary" onClick={this.checkShop}>查询</Button>

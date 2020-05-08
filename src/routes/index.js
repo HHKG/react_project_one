@@ -22,6 +22,12 @@ const AddShop = lazy(() => import('../pages/ShopManagement/addShop'));//新增�
 // 新增产品
 const AddProduct = lazy(() => import('../pages/Product/addProduct'));
 
+// 新增项目
+const AddProject = lazy(() => import('../pages/ProjectManagement/addProject'));
+
+// 新增后台账号
+const AddAccount = lazy(() => import('../pages/AccountManagement/addAccount'));
+
 export default class MRouter extends React.Component {
   render() {
     return (
@@ -36,12 +42,9 @@ export default class MRouter extends React.Component {
             <Route path="/Home/Feedback" component={Feedback}></Route>
             <Route path="/Home/OnlineTest" component={OnlineTest}></Route>
 
-            <Route path="/Home/ProjectManagement" component={ProjectManagement}></Route>
             <Route path="/Home/Solution" component={Solution}></Route>
             <Route path="/Home/SystemManagement" component={SystemManagement}></Route>
             <Route path="/Home/TestData" component={TestData}></Route>
-            <Route path="/Home/AccountManagement" component={AccountManagement}></Route>
-
 
             {/* 店铺管理 */}
             <Route path="/Home/ShopManagement/AddShop" component={AddShop}></Route>
@@ -50,6 +53,14 @@ export default class MRouter extends React.Component {
             {/* 产品管理 */}
             <Route path="/Home/Product/AddProduct" component={AddProduct}></Route>
             <Route path="/Home/Product" component={Product}></Route>
+
+            {/* 项目管理 */}
+            <Route path="/Home/ProjectManagement/AddProject" component={AddProject}></Route>
+            <Route path="/Home/ProjectManagement" component={ProjectManagement}></Route>
+
+            {/* 账号管理 */}
+            <Route path="/Home/AccountManagement/AddAccount" component={AddAccount}></Route>
+            <Route path="/Home/AccountManagement" component={AccountManagement}></Route>
 
             <Route component={NoMatch}></Route>
           </Switch>

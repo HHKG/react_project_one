@@ -26,6 +26,16 @@
 :global(.m_l_20){
   margin: 0 0 0 20px;
 }
+:global(.clear_f){
+  position: relative;
+}
+:global(.clear_f::after){
+ content: "";
+ display: block;
+ height: 0;
+ visibility: hidden;
+ clear: both;
+}
 :global(.f_r){
   float: right;
 }

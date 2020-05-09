@@ -2,8 +2,73 @@ import React, { Component } from 'react';
 import TabChange from '../../components/tabChange';
 import TitleComp from '../../components/titleComp';
 import styles from './solution.css';
+import {Table} from 'antd';
 
-
+const data = [{
+  key: '1',
+  orderNumber: '1',
+  name: '胡彦斌',
+  shopName: '南山店',
+  phoneNum: 12345678921,
+  address: '西湖区湖底公园1号',
+  createTime: '2020-04-30 9:56:00'
+}, {
+  key: '2',
+  orderNumber: '2',
+  name: '胡彦祖',
+  shopName: '福田店',
+  phoneNum: 12345678921,
+  address: '西湖区湖底公园1号',
+  createTime: '2020-04-30 9:56:00'
+}, {
+  key: '3',
+  orderNumber: '3',
+  name: '李大嘴',
+  shopName: '宝安店',
+  phoneNum: 12345678921,
+  address: '西湖区湖底公园1号',
+  createTime: '2020-04-30 9:56:00'
+}];
+const columns = [{
+  title: '序号',
+  dataIndex: 'orderNumber',
+  key: 'orderNumber',
+},
+{
+  title: '店铺名称',
+  dataIndex: 'shopName',
+  key: 'shopName',
+},
+{
+  title: '住址',
+  dataIndex: 'address',
+  key: 'address',
+},
+{
+  title: '负责人',
+  dataIndex: 'name',
+  key: 'name',
+  render: (text) => <a href="#">{text}</a>,
+},
+{
+  title: '联系电话',
+  dataIndex: 'phoneNum',
+  key: 'phoneNum',
+},
+{
+  title: '创建时间',
+  dataIndex: 'createTime',
+  key: 'createTime',
+},
+{
+  title: '操作',
+  key: 'operation',
+  render: (text, record) => (
+    <span>
+      <a >编辑</a>
+    </span>
+  ),
+}];
 class Solution extends Component {
   constructor(props) {
     super(props);
@@ -38,15 +103,21 @@ class Solution extends Component {
         break;
       }
       case 1: {
-        showCurrentItem = <div>家居推荐</div>;
+        showCurrentItem = <div>
+          <Table columns={columns} dataSource={data} />
+        </div>;
         break;
       }
       case 2: {
-        showCurrentItem = <div>店内推荐</div>;
+        showCurrentItem = <div>
+          <Table columns={columns} dataSource={data} />
+        </div>;
         break;
       }
       case 3: {
-        showCurrentItem = <div>产品文案</div>;
+        showCurrentItem = <div>
+          <Table columns={columns} dataSource={data} />
+        </div>;
         break;
       }
 

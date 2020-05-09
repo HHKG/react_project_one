@@ -16,8 +16,9 @@ class Home extends Component {
       collapsed: false, //antd框架自带，控制左边菜单的展示和收起
       menuItem: [{ title: '首页概况', icon: <BankOutlined />, url: '/Home/HomePage' }, { title: '店铺管理', icon: <ShopOutlined />, url: '/Home/ShopManagement' }, { title: '用户管理', icon: <UserOutlined />, url: '/Home/UserManagement' },
       { title: '检测数据', icon: <FundProjectionScreenOutlined />, url: '/Home/TestData' }, { title: '产品管理', icon: <MacCommandOutlined />, url: '/Home/Product' }, { title: '项目管理', icon: <ProjectOutlined />, url: '/Home/ProjectManagement' }, { title: '解决方案', icon: <BulbOutlined />, url: '/Home/Solution' },
-      { title: '账号管理', icon: <TeamOutlined />, url: '/Home/AccountManagement' }, { title: '内容设置', icon: <SettingOutlined />, url: '/Home/ContentSetting' }, { title: '反馈内容', icon: <RobotOutlined />, url: '/Home/Feedback' }, { title: '线上检测', icon: <SecurityScanOutlined />, url: '/Home/OnlineTest' },
-      { title: '系统管理', icon: <ToolOutlined />, url: '/Home/SystemManagement' }
+      { title: '账号管理', icon: <TeamOutlined />, url: '/Home/AccountManagement' }, { title: '内容设置', icon: <SettingOutlined />, url: '/Home/ContentSetting' }, { title: '反馈内容', icon: <RobotOutlined />, url: '/Home/Feedback' }, 
+      // { title: '线上检测', icon: <SecurityScanOutlined />, url: '/Home/OnlineTest' },
+      // { title: '系统管理', icon: <ToolOutlined />, url: '/Home/SystemManagement' }
       ],                //自定义左边菜单数据
       breadcrumb: [],     //面包屑数组
       defaultUrl: '/Home/HomePage',
